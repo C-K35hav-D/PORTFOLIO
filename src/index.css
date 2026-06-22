@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* =====================
+   COLOR TOKENS
+===================== */
+:root {
+  --black: #0a0a0a;
+  --blue: #1a2b6d;
+  --orange: #ff3d00;
+  --magenta: #e8135a;
+  --yellow: #ffb800;
+  --white: #f0ede4;
+}
+
+/* =====================
+   BASE STYLES
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-gray-500);
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
+  /*  cursor: none; we'll use a custom cursor later */
+}
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* =====================
+   SCROLLBAR
+===================== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+/* =====================
+   GLASSMORPHISM UTILITY
+===================== */
+.glass {
+  background: rgba(26, 43, 109, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 61, 0, 0.2);
+  border-radius: 16px;
+}
+
+.glass-yellow {
+  background: rgba(255, 184, 0, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 184, 0, 0.25);
+  border-radius: 16px;
+}
+
+/* =====================
+   SELECTION COLOR
+===================== */
+::selection {
+  background: var(--orange);
+  color: var(--black);
+}
+/* =====================
+   SPLITTING.JS CHAR ANIMATION
+===================== */
+.char {
+  display: inline-block;
+}
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
