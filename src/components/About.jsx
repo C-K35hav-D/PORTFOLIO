@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import meImage from "../assets/About-me/ME.png";
+import resumeFile from "../assets/Resume_Channakeshav.pdf";
 
 export default function About() {
   const [hovering, setHovering] = useState(false);
@@ -223,7 +224,7 @@ export default function About() {
           </div>
 
           <motion.a
-            href="/src/assets/Resume_Channakeshav.pdf"
+            href={resumeFile}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
