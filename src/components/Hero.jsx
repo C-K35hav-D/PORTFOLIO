@@ -50,17 +50,26 @@ export default function Hero() {
       >
         {trailItems.map((item, index) => (
           <ImageTrailItem key={index}>
-            <img
-              src={item.src}
-              alt=""
-              draggable={false}
+            <div
               style={{
-                width: "90px",
-                height: "auto",
-                display: "block",
-                userSelect: "none",
+                width: "120px",
+                height: "100px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
               }}
-            />
+            >
+              <img
+                src={item.src}
+                alt=""
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </div>
           </ImageTrailItem>
         ))}
       </ImageTrail>
