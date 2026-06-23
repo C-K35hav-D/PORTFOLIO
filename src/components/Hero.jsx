@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import Typewriter from "@/components/fancy/text/typewriter";
 import ImageTrail, { ImageTrailItem } from "@/components/fancy/image/image-trail";
-import render1 from './assets/trail-images/render1.webp';
-import render2 from './assets/trail-images/render2.webp';
-import render3 from './assets/trail-images/render3.webp';
-import render4 from './assets/trail-images/render4.webp';
-import render5 from './assets/trail-images/render5.webp';
-import render6 from './assets/trail-images/render6.webp';
+import render1 from './src/assets/trail-images/render1.webp';
+import render2 from './src/assets/trail-images/render2.webp';
+import render3 from './src/assets/trail-images/render3.webp';
+import render4 from './src/assets/trail-images/render4.webp';
+import render5 from './src/assets/trail-images/render5.webp';
+import render6 from './src/assets/trail-images/render6.webp';
 
 const trailItems = [
   { src: {render1},
