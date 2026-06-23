@@ -9,12 +9,12 @@ import render5 from "../assets/trail-images/render5.webp";
 import render6 from "../assets/trail-images/Render6.webp";
 
 const trailItems = [
-  { src: "/PORTFOLIO/trail-images/render1.webp" },
-  { src: "/PORTFOLIO/trail-images/render2.webp" },
-  { src: "/PORTFOLIO/trail-images/render3.webp" },
-  { src: "/PORTFOLIO/trail-images/render4.webp" },
-  { src: "/PORTFOLIO/trail-images/render5.webp" },
-  { src: "/PORTFOLIO/trail-images/Render6.webp" },
+  { src: "https://raw.githubusercontent.com/C-K35hav-D/PORTFOLIO/refs/heads/main/src/assets/trail-images/render1.webp" },
+  { src: "https://raw.githubusercontent.com/C-K35hav-D/PORTFOLIO/refs/heads/main/src/assets/trail-images/render2.webp" },
+  { src: "https://raw.githubusercontent.com/C-K35hav-D/PORTFOLIO/refs/heads/main/src/assets/trail-images/render3.webp" },
+  { src: "https://raw.githubusercontent.com/C-K35hav-D/PORTFOLIO/refs/heads/main/src/assets/trail-images/render4.webp" },
+  { src: "https://raw.githubusercontent.com/C-K35hav-D/PORTFOLIO/refs/heads/main/src/assets/trail-images/render5.webp" },
+  { src: "https://raw.githubusercontent.com/C-K35hav-D/PORTFOLIO/refs/heads/main/src/assets/trail-images/Render6.webp" },
 ];
 export default function Hero() {
   return (
