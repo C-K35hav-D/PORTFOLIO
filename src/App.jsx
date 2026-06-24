@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Contact from './components/Contact'
 import ServiceHeading from './components/ServiceHeading'
+import Work from './components/Work'
 
 function App() {
   return (
@@ -15,20 +16,7 @@ function App() {
       <Hero />
 
       {/* WORK */}
-      <section
-        id="work"
-        style={{
-          minHeight: '100vh',
-          padding: '6rem 2rem',
-          display: 'flex',
-          alignItems: 'center',
-          background: '#1A1206',
-        }}
-      >
-        <p style={{ color: 'var(--yellow)', fontFamily: 'Bebas Neue', fontSize: '4rem' }}>
-          Work — coming soon
-        </p>
-      </section>
+      <Work />
 
       {/* ABOUT */}
       <About />
