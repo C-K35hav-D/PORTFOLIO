@@ -39,8 +39,8 @@ const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + mi
 export default function Work() {
   const rotations = useRef(projects.map(() => randomInt(-12, 12)));
   const sizes = useRef(projects.map(() => ({
-    width: randomInt(120, 160),
-    height: randomInt(150, 190),
+    width: randomInt(320, 360),
+    height: randomInt(350, 390),
   })));
 
   const handleMouseDown = (e) => {
