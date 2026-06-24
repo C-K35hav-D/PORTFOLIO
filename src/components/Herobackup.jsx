@@ -55,7 +55,7 @@ export default function Hero() {
             <div
               style={{
                 width: "120px",
-                height: "100px",
+                height: "auto",
                 borderRadius: "8px",
                 overflow: "hidden",
                 boxShadow: "0 8px 32px rgba(0,0,0,0.4)",

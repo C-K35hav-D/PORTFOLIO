@@ -34,14 +34,38 @@ const projects = [
   },
 ];
 
-const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+// const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// export default function Work() {
+//   const rotations = useRef(projects.map(() => randomInt(-12, 12)));
+//   const sizes = useRef(projects.map(() => ({
+//    width: randomInt(220, 260), 
+//    height: randomInt(250, 290),
+//   })));
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
 export default function Work() {
+  const isMobile = window.innerWidth < 768;
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
   const rotations = useRef(projects.map(() => randomInt(-12, 12)));
-  const sizes = useRef(projects.map(() => ({
-    width: randomInt(320, 360),
-    height: randomInt(350, 390),
-  })));
+
+  const sizes = useRef(
+    projects.map(() => ({
+      width: isMobile
+        ? randomInt(140, 180)
+        : isTablet
+        ? randomInt(180, 220)
+        : randomInt(320, 360),
+
+      height: isMobile
+        ? randomInt(180, 220)
+        : isTablet
+        ? randomInt(220, 260)
+        : randomInt(350, 390),
+    }))
+  );
 
   const handleMouseDown = (e) => {
     e.currentTarget.dataset.startX = e.clientX;
@@ -79,7 +103,7 @@ export default function Work() {
           left: "50%",
           transform: "translate(-50%, -50%)",
           fontFamily: "Bebas Neue, sans-serif",
-          fontSize: "clamp(3rem, 8vw, 7rem)",
+          fontSize: "clamp(.51rem, 8vw, 7rem)",
           color: "rgba(255,184,0,0.08)",
           letterSpacing: "0.05em",
           whiteSpace: "nowrap",
