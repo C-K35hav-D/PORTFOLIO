@@ -48,8 +48,8 @@ export default function Hero() {
           <ImageTrailItem key={index}>
             <div
               style={{
-                width: "50px",
-                height: "50px",
+                width: "90px",
+                height: "75px",
                 background: item.bg,
                 borderRadius: "8px",
                 display: "flex",
@@ -119,7 +119,7 @@ export default function Hero() {
             style={{
               display: "block",
               fontSize: "clamp(1.8rem, 5.5vw, 7rem)",
-              WebkitTextStroke: "2px var(--orange)",
+              WebkitTextStroke: ".15vw var(--orange)",
               WebkitTextFillColor: "transparent",
               whiteSpace: "nowrap",
               overflow: "hidden",
