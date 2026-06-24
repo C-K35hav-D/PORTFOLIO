@@ -3,12 +3,12 @@ import Typewriter from "@/components/fancy/text/typewriter";
 import ImageTrail, { ImageTrailItem } from "@/components/fancy/image/image-trail";
 
 const trailItems = [
-  { bg: "#FFB800", label: "_" },
+  { bg: "#FF00F0", label: "_" },
   { bg: "#FF3D00", label: "K" },
-  { bg: "#FFB800", label: "E" },
+  { bg: "#00F0FF", label: "E" },
   { bg: "#E8135A", label: "S" },
   { bg: "#1A2B6D", label: "H" },
-  { bg: "#FF3D00", label: "A" },
+  { bg: "#7C00FF", label: "A" },
   { bg: "#FFB800", label: "V" },
 ];
 
