@@ -54,7 +54,9 @@ const DragElements = ({
           }}
           onDragEnd={() => setIsDragging(false)}
           whileDrag={{ cursor: "grabbing" }}
-          className={"absolute"}>
+          className={"absolute"} //delete the next line          
+          initial={child.props?.["data-x"] !== undefined ? { x: child.props["data-x"], y: child.props["data-y"] } : { x: 0, y: 0 }}
+        >
           {child}
         </motion.div>
       ))}
