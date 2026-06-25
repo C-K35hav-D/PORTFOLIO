@@ -155,16 +155,16 @@ export default function About() {
               letterSpacing: "0.01em",
             }}
           >
-            I turn ideas into{" "}
+            I let my work do the{" "}
             <span
               style={{
-                WebkitTextStroke: "1.5px var(--yellow)",
+                WebkitTextStroke: ".15vw var(--yellow)",
                 WebkitTextFillColor: "transparent",
               }}
             >
-              visual stories
+              TALKING
             </span>{" "}
-            that stick.
+            for me.
           </h2>
 
           <p
@@ -193,9 +193,9 @@ export default function About() {
             }}
           >
             {[
-              { num: "3+", label: "Years Experience" },
-              { num: "20+", label: "Projects Completed" },
-              { num: "6", label: "Tools Mastered" },
+              { num: "4+", label: "Years Experience" },
+              { num: "150+", label: "Projects Completed" },
+              { num: "6+", label: "Tools Mastered" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div

@@ -4,7 +4,7 @@ import Hero from './components/Herobackup'
 import About from './components/About'
 import Contact from './components/Contact'
 import ServiceHeading from './components/ServiceHeading'
-import Work from './components/Work'
+import Work from './components/Work1'
 
 function App() {
   return (
