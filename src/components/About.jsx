@@ -111,7 +111,7 @@ export default function About() {
                 fontFamily: "Space Grotesk, sans-serif",
                 fontSize: "11px",
                 letterSpacing: "0.15em",
-                color: "var(--white)",
+                color: "#FF0000",
                 background: "rgba(10,10,10,0.5)",
                 padding: "4px 10px",
                 borderRadius: "999px",
