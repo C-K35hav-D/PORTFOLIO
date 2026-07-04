@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import DragElements from "@/components/fancy/blocks/drag-elements";
+import { useNavigate } from "react-router-dom"; // added this line
 
 import Bolt from "../assets/stuff/Bolt.png";
 import Brain from "../assets/stuff/Brain.png";
@@ -77,6 +78,7 @@ export default function Work() {
   const { width, height } = useWindowSize();
   const isMobile = width < 768;
   const isTablet = width >= 768 && width < 1024;
+  const navigate = useNavigate(); // added this line
 
   const rotations = useRef(projects.map(() => randomInt(-12, 12)));
   const sizes = useRef(projects.map(() => ({
@@ -86,13 +88,28 @@ export default function Work() {
 
   // stuff items use pixel values based on window size
   const stuffItems = [
-    { src: Emark, alt: "!",     x: width * 0.04,  y: height * 0.12, width: Math.max(70, width * 0.03),  rotate: -15 },
-    { src: Brain, alt: "brain", x: width * 0.20,  y: height * 0.08, width: Math.max(190, width * 0.16),  rotate: 8   },
+    { src: Emark, alt: "!",     x: width * 0.04,  y: height * 0.12, width: Math.max(50, width * 0.03),  rotate: -15 },
+    { src: Brain, alt: "brain", x: width * 0.20,  y: height * 0.08, width: Math.max(70, width * 0.16),  rotate: 8   },
     { src: Bulb,  alt: "bulb",  x: width * 0.70,  y: height * 0.07, width: Math.max(90, width * 0.05),  rotate: -6  },
     { src: Chat,  alt: "chat",  x: width * 0.85,  y: height * 0.14, width: Math.max(90, width * 0.04),  rotate: 12  },
     { src: Bolt,  alt: "bolt",  x: width * 0.06,  y: height * 0.72, width: Math.max(35, width * 0.04), rotate: 30  },
     { src: Nut,   alt: "nut",   x: width * 0.86,  y: height * 0.76, width: Math.max(35, width * 0.04), rotate: -20 },
   ];
+
+ const handleMouseDown = (e) => {
+    e.currentTarget.dataset.startX = e.clientX;
+    e.currentTarget.dataset.startY = e.clientY;
+  };
+
+  const handleClick = (e, id) => {
+    const startX = parseFloat(e.currentTarget.dataset.startX);
+    const startY = parseFloat(e.currentTarget.dataset.startY);
+    if (Math.abs(e.clientX - startX) < 5 && Math.abs(e.clientY - startY) < 5) {
+      if (id === 1) {
+        navigate("/project/1");
+      }
+    }
+  };
 
   return (
     <section
@@ -122,8 +139,62 @@ export default function Work() {
         {projects.map((project, index) => {
           const rotation = rotations.current[index];
           const { width: cardW, height: cardH } = sizes.current[index];
-          return (
-            <div key={project.id} style={{ transform: `rotate(${rotation}deg)`, width: `${cardW}px`, height: `${cardH}px`, background: "white", padding: "8px", boxShadow: "0 10px 28px rgba(0,0,0,0.45)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "6px", transition: "box-shadow 0.2s ease" }}
+          const isFilm = project.id === 2;
+
+          return isFilm ? (
+            // ── FILM STRIP FRAME ──
+            <div
+              key={project.id}
+              onMouseDown={handleMouseDown}
+              onClick={(e) => handleClick(e, project.id)}
+              style={{
+                transform: `rotate(${rotation}deg)`,
+                width: `${cardW}px`,
+                height: `${cardH}px`,
+                background: "#0A0A0A",
+                display: "flex",
+                flexDirection: "column",
+                boxShadow: "0 10px 28px rgba(0,0,0,0.6)",
+                transition: "box-shadow 0.2s ease",
+                overflow: "hidden",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 16px 48px rgba(255,61,0,0.4)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 10px 28px rgba(0,0,0,0.6)"; }}
+            >
+              {/* top sprocket holes */}
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "4px 9px", background: "#0A0A0A" }}>
+                {Array.from({ length: Math.floor(cardW / 18) }).map((_, i) => (
+                  <div key={i} style={{ width: `${cardW * 0.038}px`, height: `${cardW * 0.04}px`, background: "#F0EDE4", borderRadius: "1px", opacity: 0.9 }} />
+                ))}
+              </div>
+
+              {/* image */}
+              <div style={{ flex: 1, overflow: "hidden", margin: "0 6px" }}>
+                <img
+                  src={project.teaser}
+                  alt={project.title}
+                  draggable={false}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", userSelect: "none", filter: "sepia(20%) contrast(1.1)" }}
+                />
+              </div>
+
+              {/* bottom sprocket holes */}
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "4px 9px", background: "#0A0A0A" }}>
+                {Array.from({ length: Math.floor(cardW / 18) }).map((_, i) => (
+                  <div key={i} style={{ width: `${cardW * 0.038}px`, height: `${cardW * 0.04}px`, background: "#F0EDE4", borderRadius: "1px", opacity: 0.9 }} />
+                ))}
+              </div>
+              <p style={{ fontFamily: "Space Grotesk, sans-serif", fontSize: "9px", fontWeight: 600, letterSpacing: "0.15em", color: "#F0EDE4", textTransform: "uppercase", textAlign: "center", padding: "4px 0 6px", background: "#0A0A0A", opacity: 0.6 }}>
+                {project.title}
+              </p>
+            </div>
+          ) : (
+            // ── REGULAR POLAROID ──
+            <div
+              key={project.id}
+              onMouseDown={handleMouseDown}
+              onClick={(e) => handleClick(e, project.id)}
+              style={{ transform: `rotate(${rotation}deg)`, width: `${cardW}px`, height: `${cardH}px`, background: "white", padding: "8px", boxShadow: "0 10px 28px rgba(0,0,0,0.45)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "6px", transition: "box-shadow 0.2s ease" }}
               onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 16px 48px rgba(255,184,0,0.35)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 10px 28px rgba(0,0,0,0.45)"; }}
             >
