@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.88 192.01">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f06924;
+      }
+    </style>
+  </defs>
+  <g id="SHAPES">
+    <g>
+      <polygon class="cls-1" points="28.88 20.89 28.88 14.33 0 40.76 0 47.32 28.88 20.89"/>
+      <polygon class="cls-1" points="28.88 6.56 28.88 0 0 26.43 0 32.99 28.88 6.56"/>
+      <polygon class="cls-1" points="28.88 34.01 28.88 27.45 0 53.88 0 60.44 28.88 34.01"/>
+      <polygon class="cls-1" points="28.88 47.09 28.88 40.53 0 66.96 0 73.52 28.88 47.09"/>
+      <polygon class="cls-1" points="28.88 60.37 28.88 53.81 0 80.25 0 86.81 28.88 60.37"/>
+      <polygon class="cls-1" points="28.88 73.49 28.88 66.93 0 93.36 0 99.92 28.88 73.49"/>
+      <polygon class="cls-1" points="28.88 86.57 28.88 80.01 0 106.45 0 113.01 28.88 86.57"/>
+      <polygon class="cls-1" points="28.88 99.89 28.88 93.34 0 119.77 0 126.33 28.88 99.89"/>
+      <polygon class="cls-1" points="28.88 113.01 28.88 106.45 0 132.89 0 139.44 28.88 113.01"/>
+      <polygon class="cls-1" points="28.88 126.09 28.88 119.53 0 145.97 0 152.53 28.88 126.09"/>
+      <polygon class="cls-1" points="28.88 139.38 28.88 132.82 0 159.25 0 165.81 28.88 139.38"/>
+      <polygon class="cls-1" points="28.88 152.5 28.88 145.94 0 172.37 0 178.93 28.88 152.5"/>
+      <polygon class="cls-1" points="28.88 165.58 28.88 159.02 0 185.45 0 192.01 28.88 165.58"/>
+    </g>
+  </g>
+</svg>
