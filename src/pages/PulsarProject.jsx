@@ -27,7 +27,7 @@ const REVEAL_DURATION = 1;           // seconds each element takes to fade/rise 
 const REVEAL_EASE = [0.22, 1, 0.36, 1]; // easing curve (this one = smooth "ease-out" deceleration)
 const REVEAL_STAGGER = 0.15;         // seconds between each child animating (bigger = slower cascade)
 const REVEAL_DELAY_CHILDREN = 0.05;  // seconds before the first child starts
-const REVEAL_VIEWPORT_AMOUNT = 0.2;  // 0–1, how much of an element must be visible before it triggers (0.2 = 20%)
+const REVEAL_VIEWPORT_AMOUNT = 0.1;  // 0–1, how much of an element must be visible before it triggers (0.2 = 20%)
 const REVEAL_ONCE = true;            // true = animate in only once, false = re-animate every time it scrolls into view
 
 // --- Shared UI ---
@@ -277,8 +277,38 @@ export default function PulsarProject() {
 
       {/* ── HERO (animates on load, not on scroll — it's the first thing you see) ── */}
       <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", padding: "2rem clamp(1.5rem, 10vw, 5rem)", background: "linear-gradient(135deg, #2b378b 0%, #1a2460 100%)" }}>
-        <div style={{ position: "absolute", left: -15, top: "10%", zIndex: 1 }}><OrangeLinesVertical height={320} /></div>
-        <div style={{ position: "absolute", right: -15, bottom: "10%", zIndex: 1 }}><OrangeLinesVertical height={320} /></div>
+        {/*
+          Orange lines sit behind the logo (zIndex: 0) and are nudged off-screen
+          by a negative offset that scales with viewport width.
+          On mobile (~375px): left = -20px, height = 160px → safely behind content.
+          On desktop: left = -15px, height = 320px → the original look.
+          🔧 To adjust the mobile peek: change the clamp() in left/right.
+          🔧 To change mobile height: change the first value in clamp() on height prop.
+        */}
+        {/*
+          🔧 HERO ORANGE STRIPS
+          left/right: negative = hidden behind edge, 0 = flush, positive = fully visible.
+          On mobile we use -8px so just the tip peeks in (matching your original look).
+          Height scales from 180px on phones up to 320px on wide screens.
+        */}
+        <div className="pulsar-hero-lines" style={{
+          position: "absolute",
+          left: "clamp(-8px, -0.5vw, -8px)",
+          top: "10%",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}>
+          <OrangeLinesVertical height="clamp(180px, 28vw, 320px)" />
+        </div>
+        <div className="pulsar-hero-lines" style={{
+          position: "absolute",
+          right: "clamp(-8px, -0.5vw, -8px)",
+          bottom: "10%",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}>
+          <OrangeLinesVertical height="clamp(180px, 28vw, 320px)" />
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -286,7 +316,7 @@ export default function PulsarProject() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           style={{
             textAlign: "center",
-            zIndex: 2,
+            zIndex: 2,       // logo/text above the lines
             width: "100%",
             maxWidth: "800px",
           }}
@@ -810,9 +840,16 @@ export default function PulsarProject() {
         .pulsar-page img, .pulsar-page video { max-width: 100%; height: auto; }
         .poster-track { scrollbar-width: none; -ms-overflow-style: none; }
         .poster-track::-webkit-scrollbar { display: none; }
+
+        /* --- Responsive grid --- */
         @media (max-width: 768px) {
           .pulsar-grid, .pulsar-grid-2 { grid-template-columns: 1fr !important; }
         }
+
+        /*
+          🔧 To hide the orange strips below a certain phone width, uncomment:
+          @media (max-width: 360px) { .pulsar-hero-lines { display: none; } }
+        */
       `}</style>
     </div>
   );
@@ -820,8 +857,9 @@ export default function PulsarProject() {
 
 // --- Inline SVGs (kept as JSX, not <img src>, so they render reliably on GitHub Pages) ---
 function OrangeLinesVertical({ height = 192, opacity = 0.85, style }) {
+  // height can be a number (px) or a CSS string like "clamp(140px, 22vw, 320px)"
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.88 192.01" style={{ height, width: "auto", opacity, ...style }}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.88 192.01" style={{ height, width: "auto", opacity, display: "block", ...style }}>
       <g fill="#f06924">
         <polygon points="28.88 20.89 28.88 14.33 0 40.76 0 47.32 28.88 20.89"/>
         <polygon points="28.88 6.56 28.88 0 0 26.43 0 32.99 28.88 6.56"/>
