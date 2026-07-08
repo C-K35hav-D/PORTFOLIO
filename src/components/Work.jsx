@@ -8,9 +8,11 @@ import Bulb from "../assets/stuff/Bulb.png";
 import Chat from "../assets/stuff/Chat.png";
 import Emark from "../assets/stuff/Emark.png";
 import Nut from "../assets/stuff/Nut.png";
+import Project1 from "../assets/stuff/project2.png";
 
 const projects = [
-  { id: 1, title: "Project 1", teaser: "https://images.unsplash.com/photo-1683746531526-3bca2bc901b8?q=80&w=1820&auto=format&fit=crop" },
+  { id: 1, title: "Brand Design | Pulsar", teaser: Project1 },
+  // { id: 1, title: "Project 1", teaser: "https://images.unsplash.com/photo-1683746531526-3bca2bc901b8?q=80&w=1820&auto=format&fit=crop" },
   { id: 2, title: "Project 2", teaser: "https://images.unsplash.com/photo-1631561729243-9b3291efceae?q=80&w=1885&auto=format&fit=crop" },
   { id: 3, title: "Project 3", teaser: "https://images.unsplash.com/photo-1635434002329-8ab192fe01e1?q=80&w=2828&auto=format&fit=crop" },
   { id: 4, title: "Project 4", teaser: "https://images.unsplash.com/photo-1719586799413-3f42bb2a132d?q=80&w=2048&auto=format&fit=crop" },
