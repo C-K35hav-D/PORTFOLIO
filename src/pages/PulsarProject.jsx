@@ -751,89 +751,56 @@ export default function PulsarProject() {
         <Reveal><SkillGroup title="Soft Skills" variant="ghost" items={["Storytelling", "Presenting Ideas", "Problem Solving", "Client Communication"]} /></Reveal>
       </Section>
 
-      {/* FOOTER (not scroll-revealed — it's at the very bottom, no need to hide/reveal it) */}
-      <div
-        style={{
-          padding: "4rem 2rem",
-          borderTop: "1px solid rgba(242,104,34,0.15)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "2rem",
-        }}
-      >
-        <img
-          src={PulsarLogoWhite}
-          alt="Pulsar"
-          style={{
-            height: "24px",
-            width: "auto",
-          }}
-        />
+      {/* FOOTER */}
+<div
+  style={{
+    padding: "3rem 2rem",
+    borderTop: "1px solid rgba(242,104,34,0.15)",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "1rem",
+  }}
+>
+  <img
+    src={PulsarLogoWhite}
+    alt="Pulsar"
+    style={{
+      height: "20px",
+      width: "auto",
+    }}
+  />
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
-            gap: "0.75rem",
-            textAlign: "right",
-          }}
-        >
-          <p
-            style={{
-              margin: 0,
-              fontFamily: "Space Grotesk, sans-serif",
-              fontSize: "13px",
-              color: "rgba(244,245,247,0.8)",
-              letterSpacing: "0.05em",
-            }}
-          >
-            Designed to move a legacy brand into its electric future.
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "flex-end",
-              gap: "0.75rem",
-              alignItems: "center",
-            }}
-          >
-            {["Brand Strategy", "Identity System", "Campaign", "Motion", "2026"].map(
-              (item, index) => (
-                <span
-                  key={item}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    fontFamily: "Space Grotesk, sans-serif",
-                    fontSize: "0.7rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    color: "rgba(244,245,247,0.35)",
-                  }}
-                >
-                  {index !== 0 && (
-                    <span
-                      style={{
-                        marginRight: "0.75rem",
-                        color: "#f26822",
-                        fontSize: "0.95rem",
-                      }}
-                    >
-                      ·
-                    </span>
-                  )}
-                  {item}
-                </span>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "0.75rem",
+      flexWrap: "wrap",
+    }}
+  >
+    <span style={{
+      fontFamily: "Space Grotesk, sans-serif",
+      fontSize: "0.75rem",
+      textTransform: "uppercase",
+      letterSpacing: "0.1em",
+      color: "rgba(244,245,247,0.35)",
+    }}>
+      Exceed the Limit
+    </span>
+    <span style={{ color: "#f26822", fontSize: "0.95rem" }}>·</span>
+    <span style={{
+      fontFamily: "Space Grotesk, sans-serif",
+      fontSize: "0.75rem",
+      textTransform: "uppercase",
+      letterSpacing: "0.1em",
+      color: "rgba(244,245,247,0.35)",
+    }}>
+      2026
+    </span>
+  </div>
+</div>
 
       <style>{`
         @import url('https://api.fontshare.com/v2/css?f[]=panchang@300,400,500,600,700&display=swap');
