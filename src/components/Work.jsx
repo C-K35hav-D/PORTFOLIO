@@ -9,7 +9,7 @@ import Chat from "../assets/stuff/Chat.png";
 import Emark from "../assets/stuff/Emark.png";
 import Nut from "../assets/stuff/Nut.png";
 import Project1 from "../assets/stuff/project2.png";
-import Project2 from "../assets/stuff/project2.mp4"; // 🔧 swap filename when ready
+import Project2 from "../assets/stuff/project2.webm"; // 🔧 swap filename when ready
 
 const projects = [
   { id: 1, title: "Brand Design | Pulsar", teaser: Project1, type: "image" },

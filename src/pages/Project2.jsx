@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import BoxCarousel from "@/components/fancy/carousel/box-carousel";
 import useScreenSize from "@/hooks/use-screen-size";
-import VID1 from "../assets/Project2/portrait01.mp4";
-import VID3 from "../assets/Project2/portrait03.mp4";
-import VID2 from "../assets/Project2/landscape02.mp4";
+import VID1 from "../assets/Project2/portrait01.webm";
+import VID3 from "../assets/Project2/portrait03.webm";
+import VID2 from "../assets/Project2/landscape02.webm";
 const VID4 = VID2; // placeholder until landscape04 is ready
 
 const carouselItems = [
