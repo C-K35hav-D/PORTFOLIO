@@ -803,6 +803,12 @@ export default function PulsarProject() {
 </div>
 
       <style>{`
+      
+        html, body {
+        background: #1a2b6d;
+        padding-bottom: env(safe-area-inset-bottom);
+        }     
+    </div>
         @import url('https://api.fontshare.com/v2/css?f[]=panchang@300,400,500,600,700&display=swap');
         .pulsar-page img, .pulsar-page video { max-width: 100%; height: auto; }
         .poster-track { scrollbar-width: none; -ms-overflow-style: none; }

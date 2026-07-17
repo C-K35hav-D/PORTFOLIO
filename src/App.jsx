@@ -70,7 +70,7 @@ function App() {
       {/* FOOTER */}
       <footer
         style={{
-          padding: "2rem",
+          padding: "2rem 2rem calc(2rem + env(safe-area-inset-bottom)) 2rem",
           background: "var(--black)",
           borderTop: "1px solid rgba(255,61,0,0.3)",
           color: "var(--white)",
@@ -82,7 +82,13 @@ function App() {
       >
         © Channakeshav 2026
       </footer>
+      <style>{`
+        html, body {
+  background: #0A0A0A;
+  padding-bottom: env(safe-area-inset-bottom);
+}
 
+      `}</style>
     </div>
   )
 }
