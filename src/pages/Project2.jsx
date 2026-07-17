@@ -540,7 +540,7 @@ export default function Project2Page() {
       </Section>
 
       {/* FOOTER */}
-      <div style={{ padding: "2.5rem 2rem", borderTop: "1px solid rgba(255,184,0,0.12)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+      <div style={{ padding: "2.5rem 2rem calc(2.5rem + env(safe-area-inset-bottom)) 2rem", borderTop: "1px solid rgba(255,184,0,0.12)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
         <p style={{ fontFamily: "Bebas Neue, sans-serif", fontSize: "1.25rem", color: "var(--white)", letterSpacing: "0.1em", margin: 0 }}>Moving Images</p>
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <span style={{ fontFamily: "Space Grotesk, sans-serif", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(240,237,228,0.3)" }}>Motion & Film</span>
@@ -550,6 +550,7 @@ export default function Project2Page() {
       </div>
 
       <style>{`
+        html, body { background: #1A1206; }
         @media (max-width: 640px) {
           .scene-row { flex-direction: column !important; align-items: center !important; }
         }

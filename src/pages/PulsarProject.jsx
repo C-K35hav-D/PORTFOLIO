@@ -747,7 +747,7 @@ export default function PulsarProject() {
           </p>
         </Reveal>
         <Reveal><SkillGroup title="Craft" variant="amber" items={["Brand Strategy", "Visual Identity", "Art Direction", "Copywriting", "Typography", "Campaign Design"]} /></Reveal>
-        <Reveal><SkillGroup title="Motion & Tools" variant="blue" items={["Motion Graphics", "Figma", "After Effects", "Illustrator", "Photoshop", "Blender"]} /></Reveal>
+        <Reveal><SkillGroup title="Motion & Tools" variant="blue" items={["Motion Graphics", "AI image Genaration", "Figma", "After Effects", "Illustrator", "Photoshop", "Blender"]} /></Reveal>
         <Reveal><SkillGroup title="Soft Skills" variant="ghost" items={["Storytelling", "Presenting Ideas", "Problem Solving", "Client Communication"]} /></Reveal>
       </Section>
 
