@@ -118,7 +118,8 @@ export default function Work() {
     const startY = parseFloat(e.currentTarget.dataset.startY);
     if (Math.abs(e.clientX - startX) < 5 && Math.abs(e.clientY - startY) < 5) {
       if (id === 1) navigate("/project/1");
-      if (id === 2) navigate("/project/2"); // 🔧 update route if your router uses a different path
+      if (id === 2) navigate("/project/2");
+      if (id === 3) navigate("/project/3"); // 🔧 update route if your router uses a different path
     }
   };
 
