@@ -6,7 +6,7 @@ import Float from "@/components/fancy/blocks/float";
 // ── Asset imports — swap with your real files when ready ──
 import BaroquePoster from "../assets/Project3/baroque-poster.png";
 // import BaroqueCards from "../assets/Project3/baroque-cards.jpg";
-// import Baroque3D from "../assets/Project3/baroque-3d.jpg";
+import Baroque3D from "../assets/Project3/baroque-3d1.webm";
 import PostImpPoster from "../assets/Project3/postimp-poster.png";
 import PostImp3D from "../assets/Project3/PizzaBox.webm";
 import NeoClassPoster from "../assets/Project3/neoclassic-poster.png";
@@ -62,12 +62,12 @@ const styles = [
     palette: ["#0A0805", "#C9A84C", "#F5EDD6", "#2A1F0E"],
     paletteNames: ["Midnight", "Gilded", "Parchment", "Mahogany"],
     images: [BaroquePoster],
-    // images: [],
+    video: [Baroque3D],
   },
   {
     key: "postimp",
     theme: POSTIMP,
-    title: "Nuit Étoilée",
+    title: "Ponista Pizza", // Nuit Étoilée
     subtitle: "Post-Impressionism · Perfume",
     era: "Late 19th Century",
     heroLine: "The sky as scent. The night as feeling.",
