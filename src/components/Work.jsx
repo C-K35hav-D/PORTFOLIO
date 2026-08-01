@@ -10,11 +10,12 @@ import Emark from "../assets/stuff/Emark.png";
 import Nut from "../assets/stuff/Nut.png";
 import Project1 from "../assets/stuff/project2.png";
 import Project2 from "../assets/stuff/project2.webm"; // 🔧 swap filename when ready
+import Project3 from "../assets/stuff/project3.png";
 
 const projects = [
   { id: 1, title: "Brand Design | Pulsar", teaser: Project1, type: "image" },
   { id: 2, title: "Motion & Film", teaser: Project2, type: "video" }, // 🔧 update title here
-  { id: 3, title: "Project 3", teaser: "https://images.unsplash.com/photo-1635434002329-8ab192fe01e1?q=80&w=2828&auto=format&fit=crop", type: "image" },
+  { id: 3, title: "HISTORY thro ART", teaser: Project3, type: "image" },
   { id: 4, title: "Project 4", teaser: "https://images.unsplash.com/photo-1719586799413-3f42bb2a132d?q=80&w=2048&auto=format&fit=crop", type: "image" },
   { id: 5, title: "Project 5", teaser: "https://images.unsplash.com/photo-1720561467986-ca3d408ca30b?q=80&w=2048&auto=format&fit=crop", type: "image" },
   { id: 6, title: "Project 6", teaser: "https://images.unsplash.com/photo-1724403124996-64115f38cd3f?q=80&w=3082&auto=format&fit=crop", type: "image" },

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import Glass from "../components/ui/Glass";
 import BoxCarousel from "@/components/fancy/carousel/box-carousel";
 import useScreenSize from "@/hooks/use-screen-size";
 import VID1 from "../assets/Project2/portrait01.webm";
@@ -377,12 +378,12 @@ export default function Project2Page() {
 
       {/* BACK BUTTON */}
       <div style={{ position: "fixed", top: "1.5rem", left: "1.5rem", zIndex: 100 }}>
-        <motion.button onClick={goBack} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", borderRadius: "999px", background: "rgba(240,237,228,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(240,237,228,0.12)", color: "var(--white)", fontFamily: "Space Grotesk, sans-serif", fontSize: "13px", fontWeight: 500, cursor: "pointer" }}
-        >
+        <Glass variant="subtle" style={{ borderRadius: "999px" }}>
+        <motion.button onClick={goBack} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", borderRadius: "999px", border: "none", background: "transparent", color: "#f4f5f7", fontFamily: "Space Grotesk, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.05em", cursor: "pointer" }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
           Back to Work
         </motion.button>
+        </Glass>
       </div>
 
       {/* HERO */}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Glass from "../components/ui/Glass";
 
 // --- Asset imports ---
 import PulsarLogoWhite from "../assets/pulsar/Asset 1.svg";
@@ -269,10 +270,12 @@ export default function PulsarProject() {
 
       {/* BACK BUTTON */}
       <div style={{ position: "fixed", top: "1.5rem", left: "1.5rem", zIndex: 100 }}>
-        <motion.button onClick={goBack} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", borderRadius: "999px", background: "rgba(244,245,247,0.1)", backdropFilter: "blur(12px)", border: "1px solid rgba(244,245,247,0.15)", color: "#f4f5f7", fontFamily: "Space Grotesk, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.05em", cursor: "pointer" }}>
+        <Glass variant="subtle" style={{ borderRadius: "999px" }}>
+        <motion.button onClick={goBack} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", borderRadius: "999px", border: "none", background: "transparent", color: "#f4f5f7", fontFamily: "Space Grotesk, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.05em", cursor: "pointer" }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
           Back to Work
         </motion.button>
+        </Glass>
       </div>
 
       {/* ── HERO (animates on load, not on scroll — it's the first thing you see) ── */}
