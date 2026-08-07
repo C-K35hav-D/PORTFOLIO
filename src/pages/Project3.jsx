@@ -33,7 +33,7 @@ const POSTIMP = {
   label: "Post-Impressionism",
 };
 const NEOCLASS = {
-  bg: "#F5F0E8",
+  bg: "#ede8dc",
   accent: "#8B1A1A",
   accentDim: "rgba(139,26,26,0.1)",
   accentBorder: "rgba(139,26,26,0.25)",
@@ -237,7 +237,7 @@ function StyleSection({ style, index, sectionRef }) {
 
           <Reveal>
             {isBaroque && <OrnamentDivider color={theme.accent} />}
-            {isPost && <div style={{ margin: "1rem auto" }}><SwirlAccent color={theme.accent} /></div>}
+          {/* {isPost && <div style={{ margin: "1rem auto" }}><SwirlAccent color={theme.accent} /></div>} */}
             {isNeo && <div style={{ width: "60px", height: "2px", background: theme.accent, margin: "1.5rem auto", opacity: 0.6 }} />}
           </Reveal>
 
