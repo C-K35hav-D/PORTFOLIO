@@ -22,6 +22,93 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <noscript>
+      <style>
+        .noscript-screen {
+          position: fixed;
+          inset: 0;
+          background: #0A0A0A;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          padding: 2rem;
+          text-align: center;
+          font-family: 'Space Grotesk', sans-serif;
+          color: #F0EDE4;
+        }
+        .noscript-title {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: clamp(2.5rem, 8vw, 5rem);
+          letter-spacing: 0.05em;
+          color: #F0EDE4;
+          margin: 0;
+          line-height: 1;
+        }
+        .noscript-badge {
+          background: rgba(255,61,0,0.12);
+          border: 1px solid rgba(255,61,0,0.4);
+          color: #FF3D00;
+          padding: 6px 16px;
+          border-radius: 999px;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+        }
+        .noscript-text {
+          color: rgba(240,237,228,0.5);
+          font-size: 0.95rem;
+          max-width: 400px;
+          line-height: 1.7;
+          margin: 0;
+        }
+        .noscript-steps {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 12px;
+          padding: 1.25rem 1.5rem;
+          text-align: left;
+          max-width: 400px;
+          width: 100%;
+        }
+        .noscript-steps p {
+          color: rgba(240,237,228,0.4);
+          font-size: 12px;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          margin: 0 0 0.75rem;
+        }
+        .noscript-steps ol {
+          color: rgba(240,237,228,0.6);
+          font-size: 0.875rem;
+          line-height: 1.8;
+          margin: 0;
+          padding-left: 1.25rem;
+        }
+        .noscript-steps li span {
+          color: #FFB800;
+        }
+      </style>
+      <div class="noscript-screen">
+        <p class="noscript-badge">⚠ Scripts Blocked</p>
+        <h1 class="noscript-title">DOES.KRAZY</h1>
+        <p class="noscript-text">
+          This portfolio requires JavaScript to run. It looks like scripts are being blocked possibly by Brave Shield or an ad blocker.
+        </p>
+        <div class="noscript-steps">
+          <p>To view the site</p>
+          <ol>
+            <li>Click the <span>Brave Shield</span> icon in the address bar</li>
+            <li>Toggle <span>Shields down</span> for this site</li>
+            <li>Reload the page</li>
+          </ol>
+        </div>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.jsx"></script><i class="fa fa-object-group" aria-hidden="true"></i>
   </body>
 </html>

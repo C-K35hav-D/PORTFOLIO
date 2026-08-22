@@ -532,6 +532,7 @@ export default function Project3Page() {
           .p3-grid { grid-template-columns: 1fr !important; }
         }
         html, body { background: #0A0805; }
+         * { cursor: none !important; }
       `}</style>
     </div>
   );

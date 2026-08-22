@@ -5,11 +5,12 @@ import About from './components/About'
 import Contact from './components/Contact'
 import ServiceHeading from './components/ServiceHeading'
 import Work from './components/Work'
+import JellyCursor from "./components/JellyCursor";
 
 function App() {
   return (
-    <div className="noise">
-
+    <div className="noise" style={{ cursor: "none" }}>
+    <JellyCursor />   {/* ← add this */}
       <Navbar />
 
       {/* HERO */}
@@ -87,7 +88,7 @@ function App() {
   background: #0A0A0A;
   padding-bottom: env(safe-area-inset-bottom);
 }
-
+  * { cursor: none !important; }
       `}</style>
     </div>
   )

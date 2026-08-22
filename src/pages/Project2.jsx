@@ -7,6 +7,7 @@ import useScreenSize from "@/hooks/use-screen-size";
 import VID1 from "../assets/Project2/portrait01.webm";
 import VID3 from "../assets/Project2/portrait03.webm";
 import VID2 from "../assets/Project2/landscape02.webm";
+2
 const VID4 = VID2;
 
 import BTS01_1 from "../assets/Project2/bts01_1.webm";
@@ -298,8 +299,9 @@ export default function Project2Page() {
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem", width: "100%", zIndex: 1 }}
         >
+          <div data-cursor="drag">
           <BoxCarousel ref={carouselRef} items={carouselItems} width={width} height={height} direction="right" onIndexChange={(i) => setActiveIndex(i)} enableDrag perspective={1000} />
-
+          </div>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", justifyContent: "center" }}>
             <motion.button onClick={() => carouselRef.current?.prev()} whileHover={{ scale: 1.1, x: -3 }} whileTap={{ scale: 0.95 }}
               style={{ flexShrink: 0, width: "40px", height: "40px", borderRadius: "50%", background: "rgba(255,184,0,0.08)", border: "1px solid rgba(255,184,0,0.25)", color: "var(--yellow)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -438,6 +440,7 @@ export default function Project2Page() {
         .big-player-wrap:-webkit-full-screen, .big-player-wrap:-moz-full-screen, .big-player-wrap:fullscreen {
           background: #000 !important; display: flex !important; flex-direction: column !important; justify-content: center !important;
         }
+           * { cursor: none !important; }
       `}</style>
     </div>
   );
