@@ -519,7 +519,7 @@ export default function PulsarProject() {
             Every angle.<br /><span style={{ color: "#f26822", fontWeight: 300 }}>Every line.</span>
           </h2>
           <p style={{ fontFamily: "Space Grotesk, sans-serif", fontSize: "clamp(0.9rem,1.2vw,1rem)", color: "rgba(244,245,247,0.45)", marginBottom: "2.5rem", maxWidth: "520px", lineHeight: 1.7 }}>
-            Drag to rotate the bike 360°.
+            calculated
           </p>
         </Reveal>
         <Reveal delay={0.15}>
