@@ -87,7 +87,7 @@ export default function Contact() {
       >
         {/* Email — primary, biggest */}
         
-          <a href="mailto:channakeshavdevarmani@gmail.com"
+          <a href="mailto:channakeshavdevaramani@gmail.com"
           style={{
             textDecoration: "none",
             color: "var(--yellow)",
