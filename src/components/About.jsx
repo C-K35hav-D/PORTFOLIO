@@ -2,25 +2,26 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import meImage from "../assets/About-me/ME.png";
 import resumeFile from "../assets/Resume_Channakeshav.pdf";
+import Float from "@/components/fancy/blocks/float";
 
 export default function About() {
   const [hovering, setHovering] = useState(false);
   const [maskPos, setMaskPos] = useState({ x: 50, y: 50 });
 
   return (
-<section
-  id="about"
-  style={{
-    minHeight: "100vh",
-    width: "100%",
-    padding: "8rem 2rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    background: "#1A0610",
-  }}
->
+    <section
+      id="about"
+      style={{
+        minHeight: "100vh",
+        width: "100%",
+        padding: "8rem 2rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        background: "#1A0610",
+      }}
+    >
       <div
         className="about-grid"
         style={{
@@ -33,96 +34,95 @@ export default function About() {
         }}
       >
         {/* ── PHOTO — glass frame ── */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          onMouseEnter={() => setHovering(true)}
-          onMouseLeave={() => setHovering(false)}
-          style={{
-            position: "relative",
-            padding: "1rem",
-            borderRadius: "24px",
-            background: "rgba(26, 43, 109, 0.15)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            border: "1px solid rgba(255, 61, 0, 0.25)",
-            boxShadow: hovering
-              ? "0 0 50px rgba(255,61,0,0.35), 0 20px 60px rgba(0,0,0,0.5)"
-              : "0 20px 60px rgba(0,0,0,0.4)",
-            transition: "box-shadow 0.5s ease",
-          }}
-        >
-          <div
-            onMouseMove={(e) => {
-              const rect = e.currentTarget.getBoundingClientRect();
-              setMaskPos({
-                x: ((e.clientX - rect.left) / rect.width) * 100,
-                y: ((e.clientY - rect.top) / rect.height) * 100,
-              });
-            }}
+        <Float speed={0.4} amplitude={[8, 12, 6]} rotationRange={[3, 4, 2]}>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            onMouseEnter={() => setHovering(true)}
+            onMouseLeave={() => setHovering(false)}
             style={{
               position: "relative",
-              width: "100%",
-              aspectRatio: "4 / 5",
-              borderRadius: "16px",
-              overflow: "hidden",
+              padding: "1rem",
+              borderRadius: "24px",
+              
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              
+              transition: "box-shadow 0.5s ease",
             }}
           >
-            {/* base layer — always black & white */}
-            <img
-              src={meImage}
-              alt="Profile"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter: "grayscale(100%) contrast(1.1)",
-                display: "block",
-              }}
-            />
-
-            {/* top layer — duotone, revealed via cursor mask */}
-            <img
-              src={meImage}
-              alt=""
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter:
-                  "grayscale(20%) sepia(100%) hue-rotate(-50deg) saturate(800%) brightness(0.9)",
-                opacity: hovering ? 1 : 0,
-                maskImage: `radial-gradient(circle 200px at ${maskPos.x}% ${maskPos.y}%, black 0%, black 40%, transparent 75%)`,
-                WebkitMaskImage: `radial-gradient(circle 200px at ${maskPos.x}% ${maskPos.y}%, black 0%, black 40%, transparent 75%)`,
-                transition: "opacity 0.4s ease",
-              }}
-            />
-
             <div
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                setMaskPos({
+                  x: ((e.clientX - rect.left) / rect.width) * 100,
+                  y: ((e.clientY - rect.top) / rect.height) * 100,
+                });
+              }}
               style={{
-                position: "absolute",
-                top: "12px",
-                left: "12px",
-                fontFamily: "Space Grotesk, sans-serif",
-                fontSize: "11px",
-                letterSpacing: "0.15em",
-                color: "#FF0000",
-                background: "rgba(10,10,10,0.5)",
-                padding: "4px 10px",
-                borderRadius: "999px",
-                backdropFilter: "blur(8px)",
-                zIndex: 2,
+                position: "relative",
+                width: "100%",
+                aspectRatio: "4 / 5",
+                borderRadius: "16px",
+                overflow: "hidden",
               }}
             >
-              ● UNAVAILABLE FOR WORK
+              {/* base layer — always black & white */}
+              <img
+                src={meImage}
+                alt="Profile"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  filter: "grayscale(100%) contrast(1.1)",
+                  display: "block",
+                }}
+              />
+
+              {/* top layer — duotone, revealed via cursor mask */}
+              <img
+                src={meImage}
+                alt=""
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  filter:
+                    "grayscale(20%) sepia(100%) hue-rotate(-50deg) saturate(800%) brightness(0.9)",
+                  opacity: hovering ? 1 : 0,
+                  maskImage: `radial-gradient(circle 200px at ${maskPos.x}% ${maskPos.y}%, black 0%, black 40%, transparent 75%)`,
+                  WebkitMaskImage: `radial-gradient(circle 200px at ${maskPos.x}% ${maskPos.y}%, black 0%, black 40%, transparent 75%)`,
+                  transition: "opacity 0.4s ease",
+                }}
+              />
+
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  left: "12px",
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontSize: "11px",
+                  letterSpacing: "0.15em",
+                  color: "#FF0000",
+                  background: "rgba(10,10,10,0.5)",
+                  padding: "4px 10px",
+                  borderRadius: "999px",
+                  backdropFilter: "blur(8px)",
+                  zIndex: 2,
+                }}
+              >
+                ● UNAVAILABLE FOR WORK
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </Float>
 
         {/* ── CONTENT ── */}
         <motion.div
@@ -235,7 +235,6 @@ export default function About() {
               gap: "10px",
               padding: "14px 28px",
               borderRadius: "999px",
-              // background: "#cdf662",
               background: "var(--orange)",
               color: "#0A0A0A",
               fontFamily: "Space Grotesk, sans-serif",
