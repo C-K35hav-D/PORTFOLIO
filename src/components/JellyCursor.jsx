@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function useIsTouchDevice() {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -24,12 +25,19 @@ function getAngle(diffX, diffY) {
 
 export function Cursor() {
   const isTouchDevice = useIsTouchDevice();
+  const location = useLocation();
   const cursorRef = useRef(null);
   const cursorTextRef = useRef(null);
   const [cursorName, setCursorName] = useState("");
   const pos = useRef({ x: 0, y: 0 });
   const vel = useRef({ x: 0, y: 0 });
   const targetPos = useRef({ x: 0, y: 0 });
+
+  // Reset cursor state on every route change — SPA navigation unmounts
+  // the hovered element without firing a real mouseout, so it can get stuck.
+  useEffect(() => {
+    setCursorName("");
+  }, [location.pathname]);
 
 useEffect(() => {
     const handleMouseEnter = (e) => {

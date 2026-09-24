@@ -186,6 +186,7 @@ function PosterStrip() {
         {all.map((src, i) => (
           <div
             key={i}
+            data-cursor="hover"
             onClick={() => setSelected(src)}
             style={{ flex: "0 0 auto", width: "clamp(140px,30vw,220px)", aspectRatio: "3/4", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(242,104,34,0.2)", transition: "transform 0.2s ease", flexShrink: 0 }}
             onMouseEnter={e => e.currentTarget.style.transform = "scale(1.03)"}
